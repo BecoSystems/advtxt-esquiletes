@@ -56,7 +56,7 @@ início
 	nome := leia();
 
 	imprima(nome, ", digite sua idade: ");
-	idade := leia();
+	idae := leia();
 
 	se idade >= 18 então
 		se idade < 60 então
@@ -66,13 +66,13 @@ início
 		fim-se
 	senão
 		imprima("menor de idade, entrada recusada!");
-		retorne 0; 
+		retorne 0;
 	fim-se
 
 	imprima("Quer continuar? (s/n)");
 	escolha := leia();
 	se escolha = 'n' ou escolha = 'N' então
-		retorne 0; 
+		retorne 0;
 	fim-se
 
 	imprima("Qual o seu salário?");
