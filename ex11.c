@@ -90,6 +90,36 @@ void jogo();
 void menu();
 
 int main(void)
+{
+    char select;
+
+    do
+    {
+        printf("%s", texto);
+        printf("\n\n| BEGINNG |\n\n");
+        printf("Selecione 1 para abrir o menu\nselecione 2 para fechar:\n ");
+        scanf(" %c", &select);
+
+        switch(select)
+        {
+            case '1':
+                menu();
+                break;
+            case '2':
+                printf("Fechando...\n");
+                break;
+            default:
+                printf("Opção inválida, digite 1 ou 2.\n");
+                break;
+        }
+    }
+    while(select != '2');
+
+
+
+
+
+
     return EXIT_SUCCESS;
 }
 
