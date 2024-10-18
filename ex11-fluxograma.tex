@@ -117,7 +117,12 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 \begin{tikzpicture}
     % colocar nodos
     \node (inicio) [startend] {Inicio};
-    \node (txta) [print, below of=inicio] {Texto A};
+
+    \node (texto1) [print, below of=inicio] {Texto Introdução};
+
+
+    \node (Menu) [process, below of=Menu] {Exibir Menu};
+
     \node (inp1) [input, below of=txta] {objeto};
     \node (tot1) [process, below of=inp1] {total $\leftarrow$ objeto + 1};
     \node (maior) [decision, below of=tot1] {total $>$ M};
@@ -166,7 +171,7 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 
     \item \textbf{Nome Completo:} Mariana Carla De Souza Pereira
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
+        \item [Email:] \email{mcsp2@poli.br}
     \end{description}
 
 \end{enumerate}
