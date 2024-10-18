@@ -1,5 +1,5 @@
 /*****************************************************************************
- *   exN.c                                    Version 20180714.101818        *
+ *   exN.11                                    Version 20180714.101818        *
  *                                                                           *
  *   Brief description                                                       *
  *   Copyright (C) 2016-2018    by Ruben Carlo Benante                       *
@@ -82,32 +82,6 @@
 #include <stdio.h> /* Standard I/O functions */
 #include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
 #include <getopt.h> /* get options from system argc/argv */
-#include "exN.h" /* To be created for this template if needed */
-
-/* #include <time.h> */ /* Time and date functions */
-/* #include <math.h> */ /* Mathematics functions */
-/* #include <string.h> */ /* Strings functions definitions */
-/* #include <dlfcn.h> */ /* Dynamic library */
-/* #include <malloc.h> */ /* Dynamic memory allocation */
-/* #include <unistd.h> */ /* UNIX standard function */
-/* #include <limits.h> */ /* Various C limits */
-/* #include <ctype.h> */ /* Character functions */
-/* #include <errno.h> */ /* Error number codes errno */
-/* #include <signal.h> */ /* Signal processing */
-/* #include <stdarg.h> */ /* Functions with variable arguments */
-/* #include <pthread.h> */ /* Parallel programming with threads */
-/* #include <fcntl.h> */ /* File control definitions */
-/* #include <termios.h> */ /* Terminal I/O definitions POSIX */
-/* #include <sys/stat.h> */ /* File status and information */
-/* #include <float.h> */ /* Float constants to help portability */
-/* #include <setjmp.h> */ /* Bypass standard function calls and return */
-/* #include <stddef.h> */ /* Various types and MACROS */
-/* #include <SWI-Prolog.h> */ /* Prolog integration with C */
-/* #include <ncurses.h> */ /* Screen handling and optimisation functions */
-/* #include <allegro.h> */ /* A game library for graphics, sounds, etc. */
-/* #include <libintl.h> */ /* Internationalization / translation */
-/* #include <locale.h> */ /* MACROS LC_ for location specific settings */
-/* #include "libeco.h" */ /* I/O, Math, Sound, Color, Portable Linux/Windows */
 
 /* ------------------------------------------------------------------------- */
 /**
@@ -187,31 +161,6 @@ int main(int argc, char *argv[])
 /* Write your functions here... */
 
 /* ------------------------------------------------------------------------- */
-/**
- * @ingroup GroupUnique
- * @brief Prints help information and exit
- * @details Prints help information (usually called by opt -h)
- * @return Void
- * @author Ruben Carlo Benante
- * @version 20160908.182830
- * @date 2016-09-08
- *
- */
-void help(void)
-{
-    IFDEBUG("help()");
-    printf("%s - %s\n", "exN", "Brief description");
-    printf("\nUsage: %s [-h|-v]\n", "exN");
-    printf("\nOptions:\n");
-    printf("\t-h,  --help\n\t\tShow this help.\n");
-    printf("\t-V,  --version\n\t\tShow version and copyright information.\n");
-    printf("\t-v,  --verbose\n\t\tSet verbose level (cumulative).\n");
-    /* add more options here */
-    printf("\nExit status:\n\t0 if ok.\n\t1 some error occurred.\n");
-    printf("\nTodo:\n\tLong options not implemented yet.\n");
-    printf("\nAuthor:\n\tWritten by %s <%s>\n\n", "Ruben Carlo Benante", "rcb@beco.cc");
-    exit(EXIT_FAILURE);
-}
 
 /* ------------------------------------------------------------------------- */
 /**
