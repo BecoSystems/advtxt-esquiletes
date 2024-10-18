@@ -127,6 +127,30 @@ int main(void)
 
 /* ------------------------------------------------------------------------- */
 
+void menu()
+{
+    char select;
+    do
+    {
+        printf("\n\n| MENU |\n\n");
+        printf("Selecione 1 para jogar \nSelecione 2 para sair\n ");
+        scanf(" %c", &select);
+
+        switch(select)
+        {
+            case '1':
+                jogo();
+                break;
+            case '2':
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida, digite 1 ou 2.\n");
+                break;
+        }
+    }
+    while(select != '2');
+}
 /* ------------------------------------------------------------------------- */
 /**
  * @ingroup GroupUnique
