@@ -12,7 +12,7 @@
 % Coordenação:
 %     Prof. Dr. Ruben Carlo Benante
 %
-% Data: 2024-04-25
+% Data: 2024-10-20
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -118,10 +118,14 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
     % colocar nodos
     \node (inicio) [startend] {Inicio};
 
-    \node (texto1) [print, below of=inicio] {Texto Introdução};
+    \node (Menu) [process, below of=Inicio] {Exibir Menu};
 
+    \node (insira) [process, below of=Menu] {Digitar nome do jogador };
 
-    \node (Menu) [process, below of=Menu] {Exibir Menu};
+    \node (texto1) [print, below of=insira] {Texto Introdução};
+
+    \node (objeto) [input, below of=texto1] {objeto};
+
 
     \node (inp1) [input, below of=txta] {objeto};
     \node (tot1) [process, below of=inp1] {total $\leftarrow$ objeto + 1};
