@@ -82,79 +82,14 @@
 #include <stdio.h> /* Standard I/O functions */
 #include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
 #include <getopt.h> /* get options from system argc/argv */
-
+#include <stdio.h>
+#include <stdlib.h>
 /* ------------------------------------------------------------------------- */
-/**
- * @ingroup GroupUnique
- * @brief This is the main event of the evening
- * @details Ladies and Gentleman... It's tiiiime!
- * Fightiiiiing at the blue corner,
- * he, who has compiled more C code than any other adversary in the history,
- * he, who has developed UNIX and Linux, and is an inspiration to maaany languages
- * and compilers, the GNU C Compiler, GCC!
- * Fightiiiiing at the red corner, the challenger, in his first fight, lacking of any
- * valid experience but angrily, blindly, and no doubtfully, will try to
- * compile this program without errors. He, the student, the apprentice,
- * the developer, beco!!
- *
- * @param[in] argc Argument counter
- * @param[in] argv Argument strings (argument values)
- *
- * @retval 0 If succeed (EXIT_SUCCESS).
- * @retval 1 Or another error code if failed.
- *
- * @par Example
- * @code
- *    $./exN -h
- * @endcode
- *
- * @warning   Be carefull with...
- * @bug There is a bug with...
- * @todo Need to do...
- * @note You can read more about it at <<a href="http://www.beco.cc">www.beco.cc</a>>
- * @author Ruben Carlo Benante
- * @version 20160908.182830
- * @date 2016-09-08
- *
- */
-int main(int argc, char *argv[])
-{
-    int opt; /* return from getopt() */
+#define texto "| THE GAME : VALFENDA |"
+void jogo();
+void menu();
 
-    IFDEBUG("Starting optarg loop...");
-
-    /* getopt() configured options:
-     *        -h  help
-     *        -V  version
-     *        -v  verbose
-     */
-    opterr = 0;
-    while((opt = getopt(argc, argv, "vhV")) != EOF)
-        switch(opt)
-        {
-            case 'h':
-                help();
-                break;
-            case 'V':
-                copyr();
-                break;
-            case 'v':
-                verb++;
-                break;
-            case '?':
-            default:
-                printf("Type\n\t$man %s\nor\n\t$%s -h\nfor help.\n\n", argv[0], argv[0]);
-                return EXIT_FAILURE;
-        }
-
-    if(verb)
-        printf("Verbose level set at: %d\n", verb);
-
-    exN_init(); /* initialization function */
-
-    /* ...and we are done */
-    /* Write your code here... */
-
+int main(void)
     return EXIT_SUCCESS;
 }
 
