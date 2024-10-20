@@ -96,7 +96,7 @@ int main(void)
     do
     {
         printf("%s", texto);
-        printf("\n\n| BEGINNG |\n\n");
+        printf("\n\n| BENNING |\n\n");
         printf("Selecione 1 para abrir o menu\nselecione 2 para fechar\n ");
         scanf(" %c", &select);
 
@@ -195,6 +195,43 @@ switch (select) {
                 printf("chegar lá, recarrega a X-Bow, preparado para\n");
                 printf("o confronto.\n");
 
+                printf("\nApós os preparativos, com a flecha em sua mão\n");
+                printf("você se dá conta de que terá apenas uma chance\n");
+               printf("Com o desejo de preservar a paz e a esperança\n");
+               printf("e contemplar a luz da lua mais uma vez,você mira\n");
+               printf("cuidadosamente no alvo antes de disparar.\n");
+               printf("onde voce atirará::\n");
+               printf("(1) Peito\n");
+               printf("(2) Cabeça\n");
+             while (1) {
+               printf("\nEscolha 1, 2 ou 'q' para sair: ");
+               scanf(" %c", &select);
+
+               if (select == 'q') {
+                   printf("Saindo do jogo...\n");
+                   exit(0);
+               }
+               switch (select){
+                 case '1':
+                  printf("\nVocê decide mirar no peito de Akernark e acerta\n");
+                 printf("O dragão cai, e você observa sua silhueta\n");
+                 printf("sob a luz da lua, aproveitando a beleza do momento\n");
+
+                printf("\nParabéns, você salvou a vila \n");
+                 return;
+                 case '2':
+                 printf("\nVocê decide mirar na cabeça, mas ao disparar, sente\n");
+                 printf("sua esperança se esvanecer. Percebendo que se deixou\n");
+                 printf("levar pelo desespero,aceita a iminente morte.\n");
+                 printf("Com um último suspiro, decide contemplar o brilho da lua branca\n");
+                 printf(" enquanto aguarda a descida do fogo sobre seu futuro\n");
+
+                 printf("\nVocê morreu,assim condenando toda a vila\n");
+                 return;
+
+             }
+             }
+
             case '2':
                  printf("\nVocê escolhe a flecha branca e corre em direção\n");
                 printf("à X-Bow com determinação. No entanto, no meio\n");
@@ -221,10 +258,10 @@ switch (select) {
  */
 void copyr(void)
 {
-    IFDEBUG("copyr()");
-    printf("%s - Version %s\n", "exN", VERSION);
+    //IFDEBUG("copyr()");
+   // printf("%s - Version %s\n", "exN", VERSION);
     printf("\nCopyright (C) %d %s <%s>, GNU GPL version 2 <http://gnu.org/licenses/gpl.html>. This  is  free  software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n", 2016, "Ruben Carlo Benante", "rcb@beco.cc");
-    if(verb > 3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
+   // if(verb > 3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
     exit(EXIT_FAILURE);
 }
 
@@ -271,7 +308,7 @@ void copyr(void)
  */
 void exN_init(void)
 {
-    IFDEBUG("exN_init()");
+   // IFDEBUG("exN_init()");
     /* initialization */
     return;
 }
