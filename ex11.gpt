@@ -33,102 +33,94 @@
 /* ---------------------------------------------------------------------- */
 /* algoritmo */
 
-algoritmo exemplo;
+algoritmo valfenda;
 
 /* ---------------------------------------------------------------------- */
 /* variáveis */
 
-variáveis
-	idade : inteiro;
-	salario, r : real;
-	escolha : caractere;
-	nome : literal;
-	resultado : lógico;
-	tabuleiro : matriz[3][3] de inteiros;
-	i, j : inteiro;
+  variáveis
+    opcao, x : inteiro;
 fim-variáveis
 
 /* ---------------------------------------------------------------------- */
 /* rotina principal */
-
 início
-	imprima("Qual o seu nome? ");
-	nome := leia();
-
-	imprima(nome, ", digite sua idade: ");
-	idae := leia();
-
-	se idade >= 18 então
-		se idade < 60 então
-			imprima("adulto, liberado!");
-		senão
-			imprima("idoso, vaga especial.");
-		fim-se
-	senão
-		imprima("menor de idade, entrada recusada!");
-		retorne 0;
-	fim-se
-
-	imprima("Quer continuar? (s/n)");
-	escolha := leia();
-	se escolha = 'n' ou escolha = 'N' então
-		retorne 0;
-	fim-se
-
-	imprima("Qual o seu salário?");
-	salario := leia();
-	salario := salario + salario * 1.5;
-	imprima("Seu novo salário após o aumento: ", salario);
-
-	resultado := verdadeiro;
-	imprima("Calculando descontos...");
-	enquanto resultado = verdadeiro faça
-		salario := salario * 0.9;
-		imprima("Novo salário: ", salario);
-		resultado := (salario > 100.1);
-	fim-enquanto
-
-	imprima("Agora vou calcular a raiz quadrada de 9 para você:");
-	r := raiz(9);
-	imprima("A raiz de 9 é: ", r);
-
-    /* preenchendo a matriz tabuleiro */
-    imprima("Preenchendo tabuleiro");
-    para i de 0 até 2 faça
-        para j de 0 até 2 faça
-            tabuleiro[i][j] := i + j;
-        fim-para
-    fim-para
-
-    /* imprimindo o tabuleiro */
-    imprime_matriz(tabuleiro);
-
+    exibirMenu();
 fim
 
-/* ---------------------------------------------------------------------- */
-/* funções de usuário */
-
-/* ---------------------------------------------------------------------- */
-/* Encontra a raiz usando o método Newton-Raphson */
-função raiz(num: real) : real
-  xn : real;
+função exibirMenu()
 início
-    xn := 3.0;
-    retorne xn;
-fim
+    imprima("=====================================\n");
+    imprima("    THE GAME : VALFENDA!            \n");
+    imprima("=====================================\n");
+    imprima("Pressione 1 jogar");
+    imprima("Pressione 2 para sair");
+    opcao := leia();
 
+       se opcao = 1 então
+        imprima("\n\n--- BEM-VINDO A VALFENDA ---\n\n");
+    imprima("Você, jovem viajante, acaba de chegar a Valfenda em busca de conhecimento e aventura.\n");
+    imprima("Após uma longa jornada por caminhos traiçoeiros,\n");
+    imprima("sua alma anseia por desvendar os mistérios que cercam a antiga Aliança dos Povos.\n");
+    imprima("Enquanto explora os bosques, iluminados pela suave luz da lua,\n");
+    imprima("você ouve histórias sussurradas pelo vento. Falam de um artefato antigo, que,\n");
+    imprima("segundo as lendas, pode reverter a queda dos reinos e restaurar a paz.\n\n");
+    imprima("À medida que a noite se aprofunda, você se senta em uma das pedras frias do pátio de Valfenda,\n");
+    imprima("contemplando o céu estrelado. A lua cheia brilha intensamente sobre as copas das árvores,\n");
+    imprima("mas algo perturbador chama sua atenção. Uma sombra obscura cruza o brilho do luar.\n");
+    imprima("Com seu vasto conhecimento, você imediatamente reconhece o que está à sua frente: O AKERNAAK.\n\n");
+    imprima("Você precisa agir rápido! Há uma besta com duas flechas diante de você:\n");
+    imprima("(1) Flecha negra\n");
+    imprima("(2) Flecha branca\n");
+      x := leia();
+    se x = 1 então
+            imprima("\nVocê escolhe a flecha negra e percebe que o material é duro e resistente.\n");
+            imprima("Confiante de que seu plano vai dar certo, você corre para a disposição com determinação e força.\n");
+            imprima("Ao chegar lá, recarrega a X-Bow, preparado para o confronto.\n");
+
+    se x = 2 então
+            imprima("\nVocê escolhe a flecha branca e corre em direção à X-Bow com determinação.\n");
+            imprima("No entanto, no meio do trajeto, a flecha, frágil demais, se parte em suas mãos, arruinando seu plano.\n");
+            imprima("Incapaz de defender a vila, Akernak chega e dá fim a Valfenda.\n");
+              retorne;
+            fim-se
+        fim-se
+    se x > 2 então
+            imprima("Essa opção não existe\n");
+            retorne;
+        fim-se
 /* ---------------------------------------------------------------------- */
-/* Imprime matriz */
-função imprime_matriz(tabuleiro : matriz[3][3] de inteiros)
-	i, j : inteiro;
-início
-    para i de 0 até 2 faça
-        para j de 0 até 2 faça
-            imprima("tabuleiro posição ",i,",",j," é ", tabuleiro[i][j]);
-        fim-para
-    fim-para
+         imprima("\nApós os preparativos, com a flecha em sua mão, você se dá conta de que terá apenas uma chance.\n");
+            imprima("Com o desejo de preservar a paz e a esperança, você mira cuidadosamente no alvo antes de disparar.\n");
+            imprima("Onde você atirará:\n");
+            imprima("(1) Peito\n");
+            imprima("(2) Cabeça\n");
+        x := leia();
+          se x = 2 então
+            imprima("\nVocê decide mirar na cabeça, mas ao disparar, sente sua esperança se esvanecer.\n");
+            imprima("Percebendo que se deixou levar pelo desespero, aceita a iminente morte.\n");
+            imprima("Com um último suspiro, decide contemplar o brilho da lua branca enquanto aguarda a descida do fogo sobre seu futuro.\n");
+            imprima("\nVocê morreu, assim condenando toda a vila.\n");
+            retorne;
+        senão
+            se x = 1 então
+              imprima("\nVocê decide mirar no peito de Akernak e acerta.\n");
+              imprima("O dragão cai, e você observa sua silhueta sob a luz da lua, aproveitando a beleza do momento.\n");
+              imprima("\nParabéns, você salvou a vila!\n");
+                retorne;
+            fim-se
+        fim-se
+      senão
+        se opcao = 2 então
+            imprima("Saindo do jogo\n");
+        senão
+            se opcao > 2 então
+                imprima("Opção inválida. Tente novamente.\n");
+                exibirMenu();
+            fim-se
+        fim-se
+    fim-se
 fim
-
 /* ---------------------------------------------------------------------- */
 /* rodapé de configuração do vim                                          */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
