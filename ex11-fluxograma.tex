@@ -140,15 +140,18 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 
 
 
-    \node (fim) [startend, below of=nao] {Fim};
-    \path [line] (inicio) -- (txta);
-    \path [line] (txta) -- (inp1);
-    \path [line] (inp1) -- (tot1);
-    \path [line] (tot1) -- (maior);
-    \path [line] (maior) -- (sim);
-    \path [line] (sim) -- (fim);
-    \path [line] (maior) -- (nao);
-    \path [line] (nao) -- (fim);
+    \path [line] (inicio) -- (Menu);
+    \path [line] (Menu) -- (texto1);
+    \path [line] (texto1) -- (objeto);
+    \path [line] (objeto) -- (decisao1);
+    \path [line] (decisao1) -- node[anchor=east]{não}(nao1);
+    \path [line] (decisao1) -- node [anchor=west] {sim} (sim1);
+    \path [line] (sim1) -- (verbo);
+    \path [line] (verbo) -- node [anchor=east] {não} (nao2);
+    \path [line] (verbo) -- node [anchor=west] {sim} (texto vitoria total);
+    \path [line] (texto vitoria total) -- (fim);
+    \path [line] (nao1.south) -- ++(0,-0.5) |- (fim.west);
+    \path [line] (nao2.south) -- ++(0,-0.5) |- (fim.east);
 \end{tikzpicture}
 
 
