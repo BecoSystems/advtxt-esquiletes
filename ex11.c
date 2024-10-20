@@ -97,7 +97,7 @@ int main(void)
     {
         printf("%s", texto);
         printf("\n\n| BEGINNG |\n\n");
-        printf("Selecione 1 para abrir o menu\nselecione 2 para fechar:\n ");
+        printf("Selecione 1 para abrir o menu\nselecione 2 para fechar\n ");
         scanf(" %c", &select);
 
         switch(select)
@@ -107,7 +107,7 @@ int main(void)
                 break;
             case '2':
                 printf("Fechando...\n");
-                break;
+                 exit(0);
             default:
                 printf("Opção inválida, digite 1 ou 2.\n");
                 break;
@@ -143,13 +143,70 @@ void menu()
                 break;
             case '2':
                 printf("Saindo...\n");
-                break;
+                 exit(0);
             default:
                 printf("Opção inválida, digite 1 ou 2.\n");
                 break;
         }
     }
     while(select != '2');
+}
+/* ------------------------------------------------------------------------- */
+void jogo() {
+    char select;
+printf("\n\n--- BEM-VINDO A VALFENDA ---\n\n");
+    printf("Você, jovem viajante, acaba de chegar a Valfenda\n");
+    printf("em busca de conhecimento e aventura.\n");
+    printf("Após uma longa jornada por caminhos traiçoeiros,\n");
+    printf("sua alma anseia por desvendar os mistérios que\n");
+    printf("cercam a antiga Aliança dos Povos.\n");
+    printf("Enquanto explora os bosques, iluminados pela\n");
+    printf("suave luz da lua, você ouve histórias sussurradas\n");
+    printf("pelo vento. Falam de um artefato antigo, que,\n");
+    printf("segundo as lendas, pode reverter a queda dos reinos\n");
+    printf("e restaurar a paz.\n\n");
+    printf("À medida que a noite se aprofunda, você se senta\n");
+    printf("em uma das pedras frias do pátio de Valfenda,\n");
+    printf("contemplando o céu estrelado. A lua cheia brilha\n");
+    printf("intensamente sobre as copas das árvores, mas algo\n");
+    printf("perturbador chama sua atenção. Uma sombra obscura\n");
+    printf("cruza o brilho do luar. Com seu vasto conhecimento,\n");
+    printf("você imediatamente reconhece o que está à sua frente:\n");
+    printf("O AKERNAAK.\n\n");
+    printf("Você precisa agir rápido! Há uma besta com duas\n");
+    printf("flechas diante de você:\n");
+    printf("(1) Flecha negra\n");
+    printf("(2) Flecha branca\n");
+    printf("Digite 'q' para sair do jogo a qualquer momento.\n");
+    while (1) {
+        printf("\nEscolha 1, 2 ou 'q' para sair: ");
+        scanf(" %c", &select);
+
+        if (select == 'q') {
+            printf("Saindo do jogo...\n");
+            exit(0);
+        }
+switch (select) {
+            case '1':
+                  printf("\nVocê escolhe a flecha negra e percebe que\n");
+                printf("o material é duro e resistente. Confiante de\n");
+                printf("que seu plano vai dar certo, você corre para\n");
+                printf("a disposição com determinação e força. Ao\n");
+                printf("chegar lá, recarrega a X-Bow, preparado para\n");
+                printf("o confronto.\n");
+
+            case '2':
+                 printf("\nVocê escolhe a flecha branca e corre em direção\n");
+                printf("à X-Bow com determinação. No entanto, no meio\n");
+                printf("do trajeto, a flecha, frágil demais, se parte\n");
+                printf("em suas mãos, arruinando seu plano. Incapaz de\n");
+                printf("defender a vila, Akernak chega e dá fim a Valfenda.\n");
+                return;
+            default:
+                printf("Opção inválida.\n");
+                break;
+        }
+    }
 }
 /* ------------------------------------------------------------------------- */
 /**
