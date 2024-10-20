@@ -1,18 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Criação de Fluxograma usando LaTeX
 %
-% Assunto: escrever aqui um comentário com uma
-%          breve explicação do exercício
+% Assunto: Jogo Valfenda
+%
 %
 % Autores:
-%     Nome do Aluno 1
-%     Nome do Aluno 2
-%     Nome do Aluno 3
+%     Gabriel Dutra Chaves
+%     Juliana Silva Fonseca Carneiro
+%     Mariana Carla de Souza Pereira
 %
 % Coordenação:
 %     Prof. Dr. Ruben Carlo Benante
 %
-% Data: 2024-04-25
+% Data: 2024-10-20
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -50,8 +50,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % capa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Fluxograma: nome do fluxograma}
-\author{Autor1 \\ Autor2 \\ Autor3}
+\title{Fluxograma: Jogo Valfenda}
+\author{Autor4}
 
 \begin{document}
 
@@ -76,12 +76,7 @@
 
 \begin{abstract}
 
-\textbf{Assunto:} Programa tal tal
-
-% descrever em poucas palavras seu projeto aqui
-
-O programa tal e tal faz isso e isso. Neste artigo iremos apresentar o seu fluxograma completo
-% e (opcionalmente) o seu algoritmo.
+\textbf{Assunto:} O fluxograma abaixo trata-se de um jogo de aventura.
 
 Após a modelagem do fluxograma e desenvolvimento da lógica de programação em algoritmo,
 o programa será implementado na Linguagem de Programação \texttt{C}
@@ -121,24 +116,42 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 
 \begin{tikzpicture}
     % colocar nodos
-    \node (inicio) [startend] {Inicio};
-    \node (txta) [print, below of=inicio] {Texto A};
-    \node (inp1) [input, below of=txta] {objeto};
-    \node (tot1) [process, below of=inp1] {total $\leftarrow$ objeto + 1};
-    \node (maior) [decision, below of=tot1] {total $>$ M};
-    \node (sim) [print, right of=maior, node distance=4cm] {Total estourou};
-    \node (nao) [print, below of=maior, node distance=2.4cm] {Total ok};
-    \node (fim) [startend, below of=nao] {Fim};
-    % \node (vazio1) [empty, right of=fim, node distance=4cm] {};
-    % Desenhar as setas
-    \path [line] (inicio) -- (txta);
-    \path [line] (txta) -- (inp1);
-    \path [line] (inp1) -- (tot1);
-    \path [line] (tot1) -- (maior);
-    \path [line] (maior) -- (sim);
-    \path [line] (sim) -- (vazio1) -- (fim);
-    \path [line] (maior) -- (nao);
-    \path [line] (nao) -- (fim);
+\node (inicio) [startend] {Inicio};
+
+    \node (Menu) [process, below of=inicio, node distance=2.5cm] {Exibir Menu};
+
+    \node (texto1) [print, below of=Menu, node distance=2.5cm] {Texto Introdução};
+
+    \node (objeto) [input, below of=texto1, node distance=3cm] {objeto};
+
+    \node (decisao1) [decision, below of=objeto, node distance=3.5cm] { obj == 2};
+
+    \node (nao1) [print, left of=decisao1, node distance=7cm] {texto morreu};
+
+    \node (sim1) [print, below of=decisao1, node distance=3.4cm] {continuacao};
+
+    \node (verbo) [decision, below of=sim1, node distance=3cm] {atirar==1};
+
+    \node (nao2) [print, right of=verbo, node distance=7cm] {texto morte};
+
+    \node (texto vitoria total) [print , below of=verbo, node distance=3cm] {texto venceu};
+
+    \node (fim) [startend, below of=texto vitoria total, node distance= 3cm] {Fim};
+
+
+
+    \path [line] (inicio) -- (Menu);
+    \path [line] (Menu) -- (texto1);
+    \path [line] (texto1) -- (objeto);
+    \path [line] (objeto) -- (decisao1);
+    \path [line] (decisao1) -- node[anchor=east] {não} (nao1);
+    \path [line] (decisao1) -- node[anchor=west] {sim} (sim1);
+    \path [line] (sim1) -- (verbo);
+    \path [line] (verbo) -- node[anchor=east] {não} (nao2);
+    \path [line] (verbo) -- node[anchor=west] {sim} (texto vitoria total);
+    \path [line] (texto vitoria total) -- (fim);
+    \path [line] (nao1.south) -- ++(0,-0.5)  |- (fim.west);
+    \path [line] (nao2.south) -- ++(0,-0.5) |- (fim.east);
 \end{tikzpicture}
 
 
@@ -161,60 +174,21 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 \subsection*{Discentes}
 
 \begin{enumerate}
-    \item \textbf{Nome Completo:} Fulano de Tal Um
+    \item \textbf{Nome Completo:} Gabriel Dutra Chaves
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
-        \item [Endereço:]
-        \item [Matrícula:]
-        \item [CPF:]
-        \item [RG:]
-        \item [Telefone:]
-        \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
+        \item [Email:] \email{gdc1@poli.br}
     \end{description}
 
-    \item \textbf{Nome Completo:} Fulano de Qual Dois
+    \item \textbf{Nome Completo:} Juliana Silva Fonseca Carneiro
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
-        \item [Endereço:]
-        \item [Matrícula:]
-        \item [CPF:]
-        \item [RG:]
-        \item [Telefone:]
-        \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
+        \item [Email:] \email{juliana373217@poli.br}
     \end{description}
 
-    \item \textbf{Nome Completo:} Fulano de Como Três
+    \item \textbf{Nome Completo:} Mariana Carla De Souza Pereira
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
-        \item [Endereço:]
-        \item [Matrícula:]
-        \item [CPF:]
-        \item [RG:]
-        \item [Telefone:]
-        \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
+        \item [Email:] \email{mcsp2@poli.br}
     \end{description}
 
-    % \item \textbf{Nome Completo:} Fulano de tal
-    % \begin{description}
-        % \item [Email:] \email{blabla@poli.br}
-        % \item [Endereço:]
-        % \item [Matrícula:]
-        % \item [CPF:]
-        % \item [RG:]
-        % \item [Telefone:]
-        % \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
-    % \end{description}
-
-%     \item \textbf{Nome Completo:} Fulano de tal
-%     \begin{description}
-%         \item [Email:] \email{blabla@poli.br}
-%         \item [Endereço:]
-%         \item [Matrícula:]
-%         \item [CPF:]
-%         \item [RG:]
-%         \item [Telefone:]
-%         \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
-%     \end{description}
 \end{enumerate}
 
 

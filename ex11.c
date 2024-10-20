@@ -1,5 +1,5 @@
 /*****************************************************************************
- *   exN.c                                    Version 20180714.101818        *
+ *   exN.11                                    Version 20180714.101818        *
  *                                                                           *
  *   Brief description                                                       *
  *   Copyright (C) 2016-2018    by Ruben Carlo Benante                       *
@@ -82,104 +82,43 @@
 #include <stdio.h> /* Standard I/O functions */
 #include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
 #include <getopt.h> /* get options from system argc/argv */
-#include "exN.h" /* To be created for this template if needed */
-
-/* #include <time.h> */ /* Time and date functions */
-/* #include <math.h> */ /* Mathematics functions */
-/* #include <string.h> */ /* Strings functions definitions */
-/* #include <dlfcn.h> */ /* Dynamic library */
-/* #include <malloc.h> */ /* Dynamic memory allocation */
-/* #include <unistd.h> */ /* UNIX standard function */
-/* #include <limits.h> */ /* Various C limits */
-/* #include <ctype.h> */ /* Character functions */
-/* #include <errno.h> */ /* Error number codes errno */
-/* #include <signal.h> */ /* Signal processing */
-/* #include <stdarg.h> */ /* Functions with variable arguments */
-/* #include <pthread.h> */ /* Parallel programming with threads */
-/* #include <fcntl.h> */ /* File control definitions */
-/* #include <termios.h> */ /* Terminal I/O definitions POSIX */
-/* #include <sys/stat.h> */ /* File status and information */
-/* #include <float.h> */ /* Float constants to help portability */
-/* #include <setjmp.h> */ /* Bypass standard function calls and return */
-/* #include <stddef.h> */ /* Various types and MACROS */
-/* #include <SWI-Prolog.h> */ /* Prolog integration with C */
-/* #include <ncurses.h> */ /* Screen handling and optimisation functions */
-/* #include <allegro.h> */ /* A game library for graphics, sounds, etc. */
-/* #include <libintl.h> */ /* Internationalization / translation */
-/* #include <locale.h> */ /* MACROS LC_ for location specific settings */
-/* #include "libeco.h" */ /* I/O, Math, Sound, Color, Portable Linux/Windows */
-
+#include <stdio.h>
+#include <stdlib.h>
 /* ------------------------------------------------------------------------- */
-/**
- * @ingroup GroupUnique
- * @brief This is the main event of the evening
- * @details Ladies and Gentleman... It's tiiiime!
- * Fightiiiiing at the blue corner,
- * he, who has compiled more C code than any other adversary in the history,
- * he, who has developed UNIX and Linux, and is an inspiration to maaany languages
- * and compilers, the GNU C Compiler, GCC!
- * Fightiiiiing at the red corner, the challenger, in his first fight, lacking of any
- * valid experience but angrily, blindly, and no doubtfully, will try to
- * compile this program without errors. He, the student, the apprentice,
- * the developer, beco!!
- *
- * @param[in] argc Argument counter
- * @param[in] argv Argument strings (argument values)
- *
- * @retval 0 If succeed (EXIT_SUCCESS).
- * @retval 1 Or another error code if failed.
- *
- * @par Example
- * @code
- *    $./exN -h
- * @endcode
- *
- * @warning   Be carefull with...
- * @bug There is a bug with...
- * @todo Need to do...
- * @note You can read more about it at <<a href="http://www.beco.cc">www.beco.cc</a>>
- * @author Ruben Carlo Benante
- * @version 20160908.182830
- * @date 2016-09-08
- *
- */
-int main(int argc, char *argv[])
+#define texto "| THE GAME : VALFENDA |"
+void jogo();
+void menu();
+
+int main(void)
 {
-    int opt; /* return from getopt() */
+    char select;
 
-    IFDEBUG("Starting optarg loop...");
+    do
+    {
+        printf("%s", texto);
+        printf("\n\n|  BEGINNING |\n\n");
+        printf("Selecione 1 para abrir o menu\nselecione 2 para fechar\n ");
+        scanf(" %c", &select);
 
-    /* getopt() configured options:
-     *        -h  help
-     *        -V  version
-     *        -v  verbose
-     */
-    opterr = 0;
-    while((opt = getopt(argc, argv, "vhV")) != EOF)
-        switch(opt)
+        switch(select)
         {
-            case 'h':
-                help();
+            case '1':
+                menu();
                 break;
-            case 'V':
-                copyr();
-                break;
-            case 'v':
-                verb++;
-                break;
-            case '?':
+            case '2':
+                printf("Fechando...\n");
+                 exit(0);
             default:
-                printf("Type\n\t$man %s\nor\n\t$%s -h\nfor help.\n\n", argv[0], argv[0]);
-                return EXIT_FAILURE;
+                printf("Opção inválida, digite 1 ou 2.\n");
+                break;
         }
+    }
+    while(select != '2');
 
-    if(verb)
-        printf("Verbose level set at: %d\n", verb);
 
-    exN_init(); /* initialization function */
 
-    /* ...and we are done */
-    /* Write your code here... */
+
+
 
     return EXIT_SUCCESS;
 }
@@ -187,32 +126,125 @@ int main(int argc, char *argv[])
 /* Write your functions here... */
 
 /* ------------------------------------------------------------------------- */
-/**
- * @ingroup GroupUnique
- * @brief Prints help information and exit
- * @details Prints help information (usually called by opt -h)
- * @return Void
- * @author Ruben Carlo Benante
- * @version 20160908.182830
- * @date 2016-09-08
- *
- */
-void help(void)
-{
-    IFDEBUG("help()");
-    printf("%s - %s\n", "exN", "Brief description");
-    printf("\nUsage: %s [-h|-v]\n", "exN");
-    printf("\nOptions:\n");
-    printf("\t-h,  --help\n\t\tShow this help.\n");
-    printf("\t-V,  --version\n\t\tShow version and copyright information.\n");
-    printf("\t-v,  --verbose\n\t\tSet verbose level (cumulative).\n");
-    /* add more options here */
-    printf("\nExit status:\n\t0 if ok.\n\t1 some error occurred.\n");
-    printf("\nTodo:\n\tLong options not implemented yet.\n");
-    printf("\nAuthor:\n\tWritten by %s <%s>\n\n", "Ruben Carlo Benante", "rcb@beco.cc");
-    exit(EXIT_FAILURE);
-}
 
+void menu()
+{
+    char select;
+    do
+    {
+        printf("\n\n| MENU |\n\n");
+        printf("Selecione 1 para jogar \nSelecione 2 para sair\n ");
+        scanf(" %c", &select);
+
+        switch(select)
+        {
+            case '1':
+                jogo();
+                break;
+            case '2':
+                printf("Saindo...\n");
+                 exit(0);
+            default:
+                printf("Opção inválida, digite 1 ou 2.\n");
+                break;
+        }
+    }
+    while(select != '2');
+}
+/* ------------------------------------------------------------------------- */
+void jogo() {
+    char select;
+printf("\n\n--- BEM-VINDO A VALFENDA ---\n\n");
+    printf("Você, jovem viajante, acaba de chegar a Valfenda\n");
+    printf("em busca de conhecimento e aventura.\n");
+    printf("Após uma longa jornada por caminhos traiçoeiros,\n");
+    printf("sua alma anseia por desvendar os mistérios que\n");
+    printf("cercam a antiga Aliança dos Povos.\n");
+    printf("Enquanto explora os bosques, iluminados pela\n");
+    printf("suave luz da lua, você ouve histórias sussurradas\n");
+    printf("pelo vento. Falam de um artefato antigo, que,\n");
+    printf("segundo as lendas, pode reverter a queda dos reinos\n");
+    printf("e restaurar a paz.\n\n");
+    printf("À medida que a noite se aprofunda, você se senta\n");
+    printf("em uma das pedras frias do pátio de Valfenda,\n");
+    printf("contemplando o céu estrelado. A lua cheia brilha\n");
+    printf("intensamente sobre as copas das árvores, mas algo\n");
+    printf("perturbador chama sua atenção. Uma sombra obscura\n");
+    printf("cruza o brilho do luar. Com seu vasto conhecimento,\n");
+    printf("você imediatamente reconhece o que está à sua frente:\n");
+    printf("O AKERNAAK.\n\n");
+    printf("Você precisa agir rápido! Há uma besta com duas\n");
+    printf("flechas diante de você:\n");
+    printf("(1) Flecha negra\n");
+    printf("(2) Flecha branca\n");
+    printf("Digite 'q' para sair do jogo a qualquer momento.\n");
+    while (1) {
+        printf("\nEscolha 1, 2 ou 'q' para sair: ");
+        scanf(" %c", &select);
+
+        if (select == 'q') {
+            printf("Saindo do jogo...\n");
+            exit(0);
+        }
+switch (select) {
+            case '1':
+                  printf("\nVocê escolhe a flecha negra e percebe que\n");
+                printf("o material é duro e resistente. Confiante de\n");
+                printf("que seu plano vai dar certo, você corre para\n");
+                printf("a disposição com determinação e força. Ao\n");
+                printf("chegar lá, recarrega a X-Bow, preparado para\n");
+                printf("o confronto.\n");
+
+                printf("\nApós os preparativos, com a flecha em sua mão\n");
+                printf("você se dá conta de que terá apenas uma chance\n");
+               printf("Com o desejo de preservar a paz e a esperança\n");
+               printf("e contemplar a luz da lua mais uma vez,você mira\n");
+               printf("cuidadosamente no alvo antes de disparar.\n");
+               printf("onde voce atirará::\n");
+               printf("(1) Peito\n");
+               printf("(2) Cabeça\n");
+             while (1) {
+               printf("\nEscolha 1, 2 ou 'q' para sair: ");
+               scanf(" %c", &select);
+
+               if (select == 'q') {
+                   printf("Saindo do jogo...\n");
+                   exit(0);
+               }
+               switch (select){
+                 case '1':
+                  printf("\nVocê decide mirar no peito de Akernark e acerta\n");
+                 printf("O dragão cai, e você observa sua silhueta\n");
+                 printf("sob a luz da lua, aproveitando a beleza do momento\n");
+
+                printf("\nParabéns, você salvou a vila \n");
+                 return;
+                 case '2':
+                 printf("\nVocê decide mirar na cabeça, mas ao disparar, sente\n");
+                 printf("sua esperança se esvanecer. Percebendo que se deixou\n");
+                 printf("levar pelo desespero,aceita a iminente morte.\n");
+                 printf("Com um último suspiro, decide contemplar o brilho da lua branca\n");
+                 printf(" enquanto aguarda a descida do fogo sobre seu futuro\n");
+
+                 printf("\nVocê morreu,assim condenando toda a vila\n");
+                 return;
+
+             }
+             }
+
+            case '2':
+                 printf("\nVocê escolhe a flecha branca e corre em direção\n");
+                printf("à X-Bow com determinação. No entanto, no meio\n");
+                printf("do trajeto, a flecha, frágil demais, se parte\n");
+                printf("em suas mãos, arruinando seu plano. Incapaz de\n");
+                printf("defender a vila, Akernak chega e dá fim a Valfenda.\n");
+                return;
+            default:
+                printf("Opção inválida.\n");
+                break;
+        }
+    }
+}
 /* ------------------------------------------------------------------------- */
 /**
  * @ingroup GroupUnique
@@ -226,10 +258,10 @@ void help(void)
  */
 void copyr(void)
 {
-    IFDEBUG("copyr()");
-    printf("%s - Version %s\n", "exN", VERSION);
+    //IFDEBUG("copyr()");
+   // printf("%s - Version %s\n", "exN", VERSION);
     printf("\nCopyright (C) %d %s <%s>, GNU GPL version 2 <http://gnu.org/licenses/gpl.html>. This  is  free  software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n", 2016, "Ruben Carlo Benante", "rcb@beco.cc");
-    if(verb > 3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
+   // if(verb > 3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
     exit(EXIT_FAILURE);
 }
 
@@ -276,7 +308,7 @@ void copyr(void)
  */
 void exN_init(void)
 {
-    IFDEBUG("exN_init()");
+   // IFDEBUG("exN_init()");
     /* initialization */
     return;
 }
