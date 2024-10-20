@@ -96,7 +96,7 @@ int main(void)
     do
     {
         printf("%s", texto);
-        printf("\n\n| BENNING |\n\n");
+        printf("\n\n|  BEGINNING |\n\n");
         printf("Selecione 1 para abrir o menu\nselecione 2 para fechar\n ");
         scanf(" %c", &select);
 
