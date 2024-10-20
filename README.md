@@ -2,11 +2,8 @@
 ## advtxt-esquiletes
 
 ### Introdução
+O jogo "Valfenda" é uma aventura interativa que permite ao jogador tomar decisões que influenciam no desenrolar da hístoria. O protagonista , um jovem aventureiro , deve salvar Valfenda da destuição eminete e silenciosa.No auge da noite , o brilho da lua está sendo ameçada de ofuscar-se perante o fogo ardente do dragão Akernaak. As escolhas feitas pelo jogador ao longo da jonada definirão o destino de Valfenda e seus habitantes.
 
-O código desenvolvido na linguagem C tem como finalidade o desenvolvimeno de um jogo. O jogo em questão é chamado de "Valvenda".
-O jogador, chamado de viajante, anseia desvendar mistérios que cercam o povo de Valvenda, um vilarejo cheio de beleza e sabedoria.
-Em uma das de suas aventuras o viajante se depara com algo sombrio, o que mais tarde é revelado como o Akernak  do jogo. O jogador
-em questão precisa tomar uma atitude em relação ao Akernak usando as opções apresentadas no jogo para conseguir salvar a vila
 
 **//__Estrutura geral__//**
  * Inclusões de Bibliotecas:
