@@ -118,20 +118,28 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
     % colocar nodos
     \node (inicio) [startend] {Inicio};
 
-    \node (Menu) [process, below of=Inicio] {Exibir Menu};
+    \node (Menu) [process, below of=Inicio, node distance=2.5cm] {Exibir Menu};
 
-    \node (insira) [process, below of=Menu] {Digitar nome do jogador };
+    \node (texto1) [print, below of=Menu, node distance=2.5cm] {Texto Introdução};
 
-    \node (texto1) [print, below of=insira] {Texto Introdução};
+    \node (objeto) [input, below of=texto1, node distance=3cm] {objeto};
 
-    \node (objeto) [input, below of=texto1] {objeto};
+    \node (decisao1) [decision, below of =objeto, node distance=3.5cm] {obj==2};
+
+    \node (nao1) [print, left of=decisao1, node distance=7cm] {texto morreu};
+
+    \node (sim1) [print, below of=decisao1, node distance=3.4cm] {continuacao};
+
+    \node (verbo) [decision, below of=sim1, node distance=3cm] {atirar=1};
+
+    \node (nao2) [print , right of=verbo, node distance=7cm] {texto morte};
+
+    \node (texto vitoria total) [print , below of=verbo , node distance=3cm] {texto venceu};
+
+    \node (fim) [startend, below of texto vitoria total , node distance=3cm] {fim};
 
 
-    \node (inp1) [input, below of=txta] {objeto};
-    \node (tot1) [process, below of=inp1] {total $\leftarrow$ objeto + 1};
-    \node (maior) [decision, below of=tot1] {total $>$ M};
-    \node (sim) [print, right of=maior, node distance=4cm] {Total estourou};
-    \node (nao) [print, below of=maior, node distance=2.4cm] {Total ok};
+
     \node (fim) [startend, below of=nao] {Fim};
     \path [line] (inicio) -- (txta);
     \path [line] (txta) -- (inp1);
