@@ -73,16 +73,16 @@ início
     imprima("(1) Flecha negra\n");
     imprima("(2) Flecha branca\n");
       x := leia();
-    se x = 1 então
+         se x = 1 então
             imprima("\nVocê escolhe a flecha negra e percebe que o material é duro e resistente.\n");
             imprima("Confiante de que seu plano vai dar certo, você corre para a disposição com determinação e força.\n");
             imprima("Ao chegar lá, recarrega a X-Bow, preparado para o confronto.\n");
-
-    se x = 2 então
-            imprima("\nVocê escolhe a flecha branca e corre em direção à X-Bow com determinação.\n");
-            imprima("No entanto, no meio do trajeto, a flecha, frágil demais, se parte em suas mãos, arruinando seu plano.\n");
-            imprima("Incapaz de defender a vila, Akernak chega e dá fim a Valfenda.\n");
-              retorne;
+    senão
+            se x = 2 então
+                imprima("\nVocê escolhe a flecha branca e corre em direção à X-Bow com determinação.\n");
+                imprima("No entanto, no meio do trajeto, a flecha, frágil demais, se parte em suas mãos, arruinando seu plano.\n");
+                imprima("Incapaz de defender a vila, Akernak chega e dá fim a Valfenda.\n");
+                retorne;
             fim-se
         fim-se
     se x > 2 então
