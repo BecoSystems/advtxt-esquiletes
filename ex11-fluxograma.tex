@@ -116,27 +116,27 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 
 \begin{tikzpicture}
     % colocar nodos
-    \node (inicio) [startend] {Inicio};
+\node (inicio) [startend] {Inicio};
 
-    \node (Menu) [process, below of=Inicio, node distance=2.5cm] {Exibir Menu};
+    \node (Menu) [process, below of=inicio, node distance=2.5cm] {Exibir Menu};
 
     \node (texto1) [print, below of=Menu, node distance=2.5cm] {Texto Introdução};
 
     \node (objeto) [input, below of=texto1, node distance=3cm] {objeto};
 
-    \node (decisao1) [decision, below of =objeto, node distance=3.5cm] {obj==2};
+    \node (decisao1) [decision, below of=objeto, node distance=3.5cm] { obj == 2};
 
     \node (nao1) [print, left of=decisao1, node distance=7cm] {texto morreu};
 
     \node (sim1) [print, below of=decisao1, node distance=3.4cm] {continuacao};
 
-    \node (verbo) [decision, below of=sim1, node distance=3cm] {atirar=1};
+    \node (verbo) [decision, below of=sim1, node distance=3cm] {atirar==1};
 
-    \node (nao2) [print , right of=verbo, node distance=7cm] {texto morte};
+    \node (nao2) [print, right of=verbo, node distance=7cm] {texto morte};
 
-    \node (texto vitoria total) [print , below of=verbo , node distance=3cm] {texto venceu};
+    \node (texto vitoria total) [print , below of=verbo, node distance=3cm] {texto venceu};
 
-    \node (fim) [startend, below of texto vitoria total , node distance=3cm] {fim};
+    \node (fim) [startend, below of=texto vitoria total, node distance= 3cm] {Fim};
 
 
 
@@ -144,13 +144,13 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
     \path [line] (Menu) -- (texto1);
     \path [line] (texto1) -- (objeto);
     \path [line] (objeto) -- (decisao1);
-    \path [line] (decisao1) -- node[anchor=east]{não}(nao1);
-    \path [line] (decisao1) -- node [anchor=west] {sim} (sim1);
+    \path [line] (decisao1) -- node[anchor=east] {não} (nao1);
+    \path [line] (decisao1) -- node[anchor=west] {sim} (sim1);
     \path [line] (sim1) -- (verbo);
-    \path [line] (verbo) -- node [anchor=east] {não} (nao2);
-    \path [line] (verbo) -- node [anchor=west] {sim} (texto vitoria total);
+    \path [line] (verbo) -- node[anchor=east] {não} (nao2);
+    \path [line] (verbo) -- node[anchor=west] {sim} (texto vitoria total);
     \path [line] (texto vitoria total) -- (fim);
-    \path [line] (nao1.south) -- ++(0,-0.5) |- (fim.west);
+    \path [line] (nao1.south) -- ++(0,-0.5)  |- (fim.west);
     \path [line] (nao2.south) -- ++(0,-0.5) |- (fim.east);
 \end{tikzpicture}
 
